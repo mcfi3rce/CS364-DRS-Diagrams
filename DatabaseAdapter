@@ -3,7 +3,38 @@
 skinparam classAttributeIconSize 0
 
 class DatabaseAdapter {
+    -connectionString : string
+    -isConnected : bool
+    +connect() : bool
+    +disconnect() : bool
+    +executeScalarQueryStatement(string sql) : string
+    +executeQueryStatement(string sql) : Array[int][Array[Key][Value]]
+    +executeCommandStatement(string sql) : bool
+    +beginTransaction() : bool
+    +endTransaction() : bool
+}
+
+class DatabaseService << Singleton >> {
+    -databaseAdapter : DatabaseAdapter
+    {static} -instance : DatabaseService
+    -buildSelectStatement(Array[Key][Value] parameters) : string
+    -buildInsertStatement(Array[Key][Value] parameters) : string
+    -buildUpdateStatement(Array[Key][Value] parameters) : string
+    -buildDeleteStatement(Array[Key][Value] parameters) : string
+    -buildWhereClause(Array[Key][Value] parameters) : string
+    -buildOrderByClause(Array[Key][Value] parameters) : string
+    -buildGroupByClause(Array[Key][Value] parameters) : string
+    -buildHavingClause(Array[Key][Value] parameters) : string
+    -buildJoinClause(Array[Key][Value] parameters) : string
+    {static} +getInstance() : DatabaseService
     +importCsvFile(string filePath) : void
     +syncContactInfomationWithLdsTools() : void
+    +selectById<<T>>(int) : <<T>>
+    +select<<T>>(Array[Key][Value] parameters) : List<<T>>
+    +select(Array[Key][Value] fields, string from, Array[Key][Value] where, string groupBy, string having, string orderBy) : Array[int][Array[Key][Value]]
+    +deleteById<<T>>(int) : bool
+    +delete<<T>>(Array[Key][Value] parameters) : bool
+    +persist<<T>>(<<T>> obj) : bool
 }
+DatabaseAdapter o-- DatabaseService : < has 1
 @enduml
