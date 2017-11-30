@@ -31,7 +31,6 @@ class DatabaseService << Singleton >> {
     +syncContactInfomationWithLdsTools() : void
     +selectById<<T>>(int) : <<T>>
     +select<<T>>(Array[Key][Value] parameters) : List<<T>>
-    +select(Array[Key][Value] fields, string from, Array[Key][Value] where, string groupBy, string having, string orderBy) : Array[int][Array[Key][Value]]
     +deleteById<<T>>(int) : bool
     +delete<<T>>(Array[Key][Value] parameters) : bool
     +persist<<T>>(<<T>> obj) : bool
