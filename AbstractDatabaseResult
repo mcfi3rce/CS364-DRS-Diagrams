@@ -1,0 +1,28 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+abstract class AbstractDatabaseResult {
+    -errorCode : int
+    -errorMessage : string
+    -rawQuery : string
+    +isSuccessful() : bool
+}
+
+class ScalarDatabaseResult {
+    -result : string
+}
+
+class QueryDatabaseResult {
+    -result : Array[int][Array[Key][Value]]
+}
+
+class CommandDatabaseResult {
+    -lastInsertIndex : int | null
+    -rowsChanged : bool
+}
+AbstractDatabaseResult <|-- ScalarDatabaseResult
+AbstractDatabaseResult <|-- QueryDatabaseResult
+AbstractDatabaseResult <|-- CommandDatabaseResult
+
+@enduml
