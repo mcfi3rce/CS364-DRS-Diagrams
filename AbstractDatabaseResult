@@ -1,0 +1,64 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+class DatabaseAdapter {
+    -connectionString : string
+    -isConnected : bool
+    +connect() : bool
+    +disconnect() : bool
+    +executeScalarQueryStatement(string sql) : ScalarDatabaseResult
+    +executeQueryStatement(string sql) : QueryDatabaseResult
+    +executeCommandStatement(string sql) : CommandDatabaseResult
+    +beginTransaction() : bool
+    +endTransaction() : bool
+}
+
+abstract class AbstractDatabaseResult {
+    -errorCode : int
+    -errorMessage : string
+    -rawQuery : string
+    +isSuccessful() : bool
+}
+
+class ScalarDatabaseResult {
+    -result : string
+}
+
+class QueryDatabaseResult {
+    -result : Array[int][Array[Key][Value]]
+}
+
+class CommandDatabaseResult {
+    -lastInsertIndex : int | null
+    -rowsChanged : bool
+}
+AbstractDatabaseResult <|-- ScalarDatabaseResult
+AbstractDatabaseResult <|-- QueryDatabaseResult
+AbstractDatabaseResult <|-- CommandDatabaseResult
+class DatabaseService << Singleton >> {
+    -databaseAdapter : DatabaseAdapter
+    {static} -instance : DatabaseService
+    ____
+    -buildSelectStatement(Array[Key][Value] parameters) : string
+    -buildInsertStatement(Array[Key][Value] parameters) : string
+    -buildUpdateStatement(Array[Key][Value] parameters) : string
+    -buildDeleteStatement(Array[Key][Value] parameters) : string
+    -buildWhereClause(Array[Key][Value] parameters) : string
+    -buildOrderByClause(Array[Key][Value] parameters) : string
+    -buildGroupByClause(Array[Key][Value] parameters) : string
+    -buildHavingClause(Array[Key][Value] parameters) : string
+    -buildJoinClause(Array[Key][Value] parameters) : string
+    -handleDatabaseError() : void
+    {static} +getInstance() : DatabaseService
+    +importCsvFile(string filePath) : void
+    +syncContactInfomationWithLdsTools() : void
+    __ CRUD __
+    +selectById<<T>>(int) : <<T>>
+    +select<<T>>(Array[Key][Value] parameters) : List<<T>>
+    +deleteById<<T>>(int) : bool
+    +delete<<T>>(Array[Key][Value] parameters) : bool
+    +save<<T>>(<<T>> obj) : bool
+}
+DatabaseAdapter o-- DatabaseService : < has 1
+@enduml
