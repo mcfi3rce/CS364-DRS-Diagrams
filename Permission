@@ -1,5 +1,15 @@
 @startuml
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 6.3.                                                     12/1/2017 '
+' To define what access a user will be granted. This may include specific '
+' areas, what users and what information about those users is presented.  '
+' Permissions will be pulled through the LDS Tools API to assure they are '
+' aligned. Unique instances of the “permission” class represent each type '
+' of permission. The permission class contains several boolean member     '
+' variables, each referencing a particular task in the application that a '
+' user may or may not have permission to conduct.                         '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 enum Permission {
     ViewMemberContactInformation
     ResetPassword

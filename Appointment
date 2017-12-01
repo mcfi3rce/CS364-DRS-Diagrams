@@ -1,0 +1,21 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.1.                                             12/1/2017 '
+' As a teacher, the user must be able to set up appointments with   '
+' their teachees according to their availability. Appointments must '
+' be visible on the teacher’s and teachee’s calendars, to allow     '
+' planning and organization. The teacher will set a title, a start  '
+' time, an end time and a teachee when creating an appointment. A   '
+' block on the calendar that spans the appointment length, as set   '
+' by the teacher, should be displayed on both calendars. The block  '
+' will show the title and the start time of the appointment.        '
+' This will be the visual representation of the appointment.        '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Appointment {
+    -assignment  : Assignment
+}
+
+@enduml

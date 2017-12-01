@@ -2,7 +2,11 @@
 
 skinparam classAttributeIconSize 0
 
-class ChatHistory{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.3.                                                           12/1/2017 '
+' To allow users to view previous chat messages in which they were a participant. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatHistory {
     -chatMessages: List<chatMessage>
 }
 

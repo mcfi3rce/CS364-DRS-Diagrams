@@ -1,14 +1,19 @@
 @startuml
-skinparam classAttributeIconSize 0
-class Month {
-  -days : KeyValue<int, Day>
-  -name : MonthNames
-  +getDay(int) : Day
-  +addDay(Day) : void
-  +updateDay(Day) : void
-  +deleteDay(Day) : void
-}
 
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.7.                                   12/1/2017 '
+' A placeholder for the calendar to keep track of months. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Month {
+    -days : KeyValue<int, Day>
+    -name : MonthNames
+    +getDay(int) : Day
+    +addDay(Day) : void
+    +updateDay(Day) : void
+    +deleteDay(Day) : void
+}
 
 enum MonthNames {
     January, 
@@ -26,4 +31,5 @@ enum MonthNames {
 }
 
 Month *-right- MonthNames : > has 1
+
 @enduml

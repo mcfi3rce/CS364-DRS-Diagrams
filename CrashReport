@@ -1,8 +1,16 @@
 @startuml
+
 skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.6.1.                                        12/1/2017 '
+' To send the user an error message if he experiences a crash. '
+' It allows the developers to maintain and improve the system. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class CrashReport {
-	-errorMessage : string
-	-stacktrace : string
-	-userID : User
+    -errorMessage : string
+    -stacktrace : string
+    -userID : User
 }
+
 @enduml

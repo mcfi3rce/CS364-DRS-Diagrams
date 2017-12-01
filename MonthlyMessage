@@ -1,12 +1,21 @@
 @startuml
+
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.2.                                                12/1/2017 '
+' The monthly message is a religious message from the leadership of    '
+' The Church of Jesus Christ of Latter-Day Saints. The user may select '
+' the home or visiting message for a specified month. The message will '
+' be linked to the appropriate page on LDS.org and will display both   '
+' its web page and its URL.                                            '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class MonthlyMessage {
-  -url : string
-  -month : Month
-  -year : Year
-  -type : MessageType
-  +LoadMessage(url): void
+    -url : string
+    -month : Month
+    -year : Year
+    -type : MessageType
+    +LoadMessage(url): void
 }
 
 enum MessageType {

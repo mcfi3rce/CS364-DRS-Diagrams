@@ -1,14 +1,24 @@
 @startuml
+
 skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.6.3.                             12/1/2017 '
+' To allow the user to store their language and Two '
+' Factor Authentication preferences for future use. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Preferences {
-	-user : User
-	-language : LanguageLocalization
-	-hasTwoFactorAuthenticaton : bool
+    -user : User
+    -language : LanguageLocalization
+    -hasTwoFactorAuthenticaton : bool
 }
+
 enum LanguageLocalization {
-	English
-	Spanish
-	Portuguese
+    English
+    Spanish
+    Portuguese
 }
+
 Preferences *-right- LanguageLocalization : > has 1
+
 @enduml

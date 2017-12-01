@@ -2,9 +2,13 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.3.                                              12/1/2017  '
+' Store the user’s phone number as part of their contact information. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class PhoneNumber {
-  -number : string
-  -type : PhoneType
+    -number : string
+    -type : PhoneType
 }
 
 enum PhoneType {

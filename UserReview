@@ -1,0 +1,17 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.6.                                                  12/1/2017 '
+' Allows the user to rate the application and provide feedback to the    '
+' development team. A report will run on the 15th and 30th of each month '
+' with the reviews and comments since the report was last generated.     '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class UserReview {
+   -username : string
+   -rating : int
+   -text : string
+}
+
+@enduml

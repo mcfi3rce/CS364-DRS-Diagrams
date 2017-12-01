@@ -2,14 +2,18 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.9.                                                           12/1/2017 '
+' Used on the calendar on a day to describe when an event is going to take place. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Hour {
-  -events : List<Event>
-  -name : int
-  +addEvent(Event) : void
-  +updateEvent(Event) : void
-  +deleteEvent(Event) : void
-  +addEvents(List<Event>) : void
-  +deleteEvents(List<Event>) : void
+    -events : List<Event>
+    -name : int
+    +addEvent(Event) : void
+    +updateEvent(Event) : void
+    +deleteEvent(Event) : void
+    +addEvents(List<Event>) : void
+    +deleteEvents(List<Event>) : void
 }
 
 @enduml

@@ -2,6 +2,11 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.8.                        12/1/2017 '
+' A data storage area to save whether or not a '
+' teacher has visited their assigned teachees. '
+''''''''''''''''''''''''''''''''''''''''''''''''
 class TeacherContactRecord {
     -visits : Set<Visit>
 }

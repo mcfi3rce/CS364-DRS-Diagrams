@@ -1,0 +1,16 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 5.4.2.                                              12/1/2017 '
+' To interface with the leader clerk resources. A wrapper class that '
+' makes HTTP requests to the Leader Clerk Resources API to access    '
+' information necessary for leadership roles.                        '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class LCRWebToolsClient {
+    {static}-displayError() : void
+    {static}+syncAppToLCRWebTools() : void
+}
+
+@enduml

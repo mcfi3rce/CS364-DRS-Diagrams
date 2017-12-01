@@ -2,16 +2,25 @@
 
 skinparam classAttributeIconSize 0
 
-class ChatMessage{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.4.                                                 12/1/2017 '
+' To provide a method for users to communicate with other users within  '
+' the app. Users shall only be able to communicate with those that they '
+' have privileges to view. Chat messages may be sent to one or many     '
+' users. When a user receives a new message, they will receive a        '
+' notification alerting them to their new message.                      '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatMessage {
     -isNullOrEmpty: bool
     -type: ChatMessageType
     -message: string
 }
 
-enum ChatMessageType{
+enum ChatMessageType {
     Sent
     Recieved
 }
 
 ChatMessage *-right- ChatMessageType : > has 1
+
 @enduml

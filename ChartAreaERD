@@ -2,11 +2,22 @@
 
 skinparam classAttributeIconSize 0
 
-class Messages{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.1.                                                       12/1/2017 '
+' To provide a way to allow users to send a SMS message to other users        '
+' without leaving the web app. SMS messages may be sent to one or many users. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Messages {
     -message: ChatMessage
 }
 
-class ChatArea{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.2.                                               12/1/2017 '
+' To provide a designated space for users to communicate with each    '
+' other within the web app. Users may also be able to view, delete or '
+' archive their chat history for a desired conversation.              '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatArea {
     -recipients: List<User>
     -currentMessage: chatMessage
     -isSent: bool
@@ -18,17 +29,29 @@ class ChatArea{
     +notifyUser(): Notification
 }
 
-class ChatHistory{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.3.                                                           12/1/2017 '
+' To allow users to view previous chat messages in which they were a participant. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatHistory {
     -chatMessages: List<chatMessage>
 }
 
-class ChatMessage{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.4.                                                 12/1/2017 '
+' To provide a method for users to communicate with other users within  '
+' the app. Users shall only be able to communicate with those that they '
+' have privileges to view. Chat messages may be sent to one or many     '
+' users. When a user receives a new message, they will receive a        '
+' notification alerting them to their new message.                      '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatMessage {
     -isNullOrEmpty: bool
     -type: ChatMessageType
     -message: string
 }
 
-enum ChatMessageType{
+enum ChatMessageType {
     Sent
     Recieved
 }

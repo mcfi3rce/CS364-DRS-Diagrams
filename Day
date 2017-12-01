@@ -2,13 +2,17 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.8.                                 12/1/2017 '
+' A placeholder for the calendar to keep track of days. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Day {
-  -hours : KeyValue<int, Hour>
-  -name : int
-  +getHour(int) : Hour
-  +addHour(Hour) : void
-  +updateHour(Hour) : void
-  +deleteHour(Hour) : void
+    -hours : KeyValue<int, Hour>
+    -name : int
+    +getHour(int) : Hour
+    +addHour(Hour) : void
+    +updateHour(Hour) : void
+    +deleteHour(Hour) : void
 }
 
 @enduml

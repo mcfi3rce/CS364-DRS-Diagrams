@@ -2,6 +2,10 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 6.4.                                                          12/1/2017 '
+' Allow users to retrieve information about church members and their families. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class DatabaseAdapter {
     -connectionString : string
     -isConnected : bool
@@ -14,7 +18,10 @@ class DatabaseAdapter {
     +endTransaction() : bool
 }
 
-
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 6.4.                                                          12/1/2017 '
+' Allow users to retrieve information about church members and their families. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class DatabaseService << Singleton >> {
     -databaseAdapter : DatabaseAdapter
     {static} -instance : DatabaseService
@@ -29,6 +36,7 @@ class DatabaseService << Singleton >> {
     -buildHavingClause(Array[Key][Value] parameters) : string
     -buildJoinClause(Array[Key][Value] parameters) : string
     -handleDatabaseError() : void
+    -sendCrashReport() : void
     {static} +getInstance() : DatabaseService
     +importCsvFile(string filePath) : void
     +syncContactInfomationWithLdsTools() : void
@@ -39,5 +47,7 @@ class DatabaseService << Singleton >> {
     +delete<<T>>(Array[Key][Value] parameters) : bool
     +save<<T>>(<<T>> obj) : bool
 }
+
 DatabaseAdapter o-- DatabaseService : < has 1
+
 @enduml

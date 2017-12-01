@@ -2,6 +2,11 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.10.                                     12/1/2017 '
+' To store the stake’s information so users have access to   '
+' what stake they are in and who the stake’s leadership are. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Stake {
     -wards : List<Ward>
     -name : string

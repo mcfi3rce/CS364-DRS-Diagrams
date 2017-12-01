@@ -2,8 +2,12 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.4.                                                             12/1/2017 '
+' A scheduled event is a ward or stake event that is obtained via the LDSTools API. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class ScheduledEvent {
-  -users : List<user>
+    -users : List<user>
 }
 
 @enduml

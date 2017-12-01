@@ -1,8 +1,16 @@
 @startuml
+
 skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 5.1.2.                                            12/1/2017 '
+' A wrapper class that makes HTTP requests to Google Maps API to   '
+' provide the client information about locations such as addresses '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class GoogleMapsClient {
-	{static}+openGoogleMapsToAddress(Address):void
-	{static}+openGoogleMapsAndNavagateToAddress(Address):void
-	{static}+getGeoLocation(Address):GeoLocation
+    {static}+openGoogleMapsToAddress(Address):void
+    {static}+openGoogleMapsAndNavagateToAddress(Address):void
+    {static}+getGeoLocation(Address):GeoLocation
 }
+
 @enduml

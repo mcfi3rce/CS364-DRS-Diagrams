@@ -2,9 +2,35 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.1.                                              12/1/2017 '
+' To store the information of the user who physically interacts with '
+' the app by logging in. This includes username, password, role(s),  '
+' contact information, birth date, visit preference, personal        '
+' calendar, ward and their web app user preferences.                 '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class User {
+    -isAuthenticated : bool
+    -username : string
+    -password : string
+    -roles : List<Role>
+    -contactInformation : ContactInformation
+    -birthday : Date
+    -doNotVisit : bool
+    -personalCalendar : PersonalCalendar
+    -ward : Ward
+    -preferences : Preferences 
+    +isAuthenticated() : bool
+    +hasPermission(Permission) : bool
+    +hasTwoFactorAuthenticaton() : bool
 }
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.7.                                               12/1/2017 '
+' To store two or three teachers and the teachee(s) they are assigned '
+' to visit. The companionship will have an effective date and         '
+' expiration date. It will also access the Teacher Contact Record.    '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Companionship {
     -teachers : List<User>
     -assignments : List<Assignment>
@@ -14,15 +40,31 @@ class Companionship {
     -teacherContactRecord : TeacherContactRecord
 }
 
-class Assignent {
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.6.                                          12/1/2017 '
+' To store a companionship's teachee.                            '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Assignment {
     -assignedCompanionship : Companionship
     -teachees : List<Teachee>
 }
 
+''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.8.                        12/1/2017 '
+' A data storage area to save whether or not a '
+' teacher has visited their assigned teachees. '
+''''''''''''''''''''''''''''''''''''''''''''''''
 class TeacherContactRecord {
     -visits : Set<Visit>
 }
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.7.                                               12/1/2017 '
+' To allow teachers to record the date they visited their teachee(s). '
+' They will also be able to select the type of visit. This list shall '
+' include visiting a teachee at their residence, calling, texting,    '
+' dropping off a treat or sharing a message.                          '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Visit {
     -assignment : Assignment
     -date : Date
@@ -35,4 +77,5 @@ Companionship o-- User : > has 1..*
 Companionship *-- TeacherContactRecord : > has 1
 TeacherContactRecord *-- Visit : > has 0..*
 Visit *-- Assignment : > has 1
+
 @enduml

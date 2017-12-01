@@ -1,7 +1,15 @@
 @startuml
+
 skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 5.1.3.                                              12/1/2017 '
+' A wrapper class that makes HTTP requests to the Google Maps API to '
+' provide the client information about locations such as addresses   '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class GeoLocation {
-	-latitude : double
-	-longitude : double
+    -latitude : double
+    -longitude : double
 }
+
 @enduml
