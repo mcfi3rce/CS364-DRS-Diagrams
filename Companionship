@@ -2,6 +2,12 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.7.                                               12/1/2017 '
+' To store two or three teachers and the teachee(s) they are assigned '
+' to visit. The companionship will have an effective date and         '
+' expiration date. It will also access the Teacher Contact Record.    '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Companionship {
     -teachers : List<User>
     -assignments : List<Assignment>

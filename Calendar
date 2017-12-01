@@ -1,0 +1,17 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.5                                           12/1/2017 '
+' A place for the user to view upcoming events and appointments. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+abstract class Calendar {
+    -years : KeyValue<int, Year>
+    +getYear(int) : Year
+    +addYear(Year) : void
+    +updateYear(Year) : void
+    +deleteYear(Year) : void
+}
+
+@enduml

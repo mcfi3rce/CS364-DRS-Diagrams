@@ -2,8 +2,15 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.7.                                               12/1/2017 '
+' To allow teachers to record the date they visited their teachee(s). '
+' They will also be able to select the type of visit. This list shall '
+' include visiting a teachee at their residence, calling, texting,    '
+' dropping off a treat or sharing a message.                          '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Visit {
-    -assignent : Assignent
+    -assignment : assignment
     -date : Date
     -type : VisitType
 }
@@ -12,6 +19,7 @@ enum VisitType {
     HomeTeaching
     VisitingTeaching
 }
+
 Visit *-right- VisitType : > has 1
 
 @enduml

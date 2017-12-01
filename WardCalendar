@@ -1,0 +1,17 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.10.                                              12/1/2017 '
+' To allow ward members to view upcoming ward events, including the   '
+' date, start and end time. The ward calendar can also be overlaid on '
+' the user’s personal calendar so they can view both types of events. '
+' The user may also create notifications on their personal calendar   '
+' for upcoming ward events.                                           '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class WardCalendar {
+    -ward : Ward
+}
+
+@enduml

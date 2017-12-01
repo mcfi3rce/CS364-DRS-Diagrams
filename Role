@@ -2,6 +2,12 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.5.                                              12/1/2017 '
+' To set the permissions for each user based on their roles in their '
+' ward and stake in relation to visiting teaching or home teaching.  '
+' Roles and permissions will be provided through the LDS Tools API   '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Role {
     -name : string
     -permissions : Set<Permission>

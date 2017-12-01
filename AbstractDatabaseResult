@@ -2,6 +2,10 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''
+' SDD: N/A                    12/1/2017 '
+' This entity was not found in the SDD. '
+'''''''''''''''''''''''''''''''''''''''''
 abstract class AbstractDatabaseResult {
     -errorCode : int
     -errorMessage : string
@@ -9,18 +13,31 @@ abstract class AbstractDatabaseResult {
     +isSuccessful() : bool
 }
 
+'''''''''''''''''''''''''''''''''''''''''
+' SDD: N/A                    12/1/2017 '
+' This entity was not found in the SDD. '
+'''''''''''''''''''''''''''''''''''''''''
 class ScalarDatabaseResult {
     -result : string
 }
 
+'''''''''''''''''''''''''''''''''''''''''
+' SDD: N/A                    12/1/2017 '
+' This entity was not found in the SDD. '
+'''''''''''''''''''''''''''''''''''''''''
 class QueryDatabaseResult {
     -result : Array[int][Array[Key][Value]]
 }
 
+'''''''''''''''''''''''''''''''''''''''''
+' SDD: N/A                    12/1/2017 '
+' This entity was not found in the SDD. '
+'''''''''''''''''''''''''''''''''''''''''
 class CommandDatabaseResult {
     -lastInsertIndex : int | null
     -rowsChanged : bool
 }
+
 AbstractDatabaseResult <|-- ScalarDatabaseResult
 AbstractDatabaseResult <|-- QueryDatabaseResult
 AbstractDatabaseResult <|-- CommandDatabaseResult

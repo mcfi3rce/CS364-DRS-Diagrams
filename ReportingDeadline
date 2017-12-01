@@ -1,0 +1,16 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.4.                                       12/1/2017 '
+' To set a date when visits must be completed by every month. '
+' The reporting deadline is the last day of the month.        '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ReportingDeadline {
+    -Day day
+    -Month month
+    -Year year
+}
+
+@enduml

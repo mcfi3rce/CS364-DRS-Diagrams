@@ -2,19 +2,27 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.1.                                              12/1/2017 '
+' To store the information of the user who physically interacts with '
+' the app by logging in. This includes username, password, role(s),  '
+' contact information, birth date, visit preference, personal        '
+' calendar, ward and their web app user preferences.                 '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class User {
     -isAuthenticated : bool
     -username : string
     -password : string
-    +isAuthenticated() : bool
     -roles : List<Role>
-    +hasPermission(Permission) : bool
     -contactInformation : ContactInformation
     -birthday : Date
     -doNotVisit : bool
     -personalCalendar : PersonalCalendar
     -ward : Ward
     -preferences : Preferences 
+    +isAuthenticated() : bool
+    +hasPermission(Permission) : bool
     +hasTwoFactorAuthenticaton() : bool
 }
+
 @enduml

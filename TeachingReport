@@ -1,10 +1,23 @@
 @startuml
+
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.3.1.                                                12/1/2017 '
+' To allow teachers and leadership to view the outcome of visits over  '
+' a period of time. This report will contain the following columns:    '
+' teachers names, teachee(s) names, whether or not they were visited   '
+' each month and year, visit type, and any notes entered in for the    '
+' appointment. The user running the report may select their desired    '
+' time frame, from 1 - 12 months. The user will only be able to select '
+' reports for units that they have been granted permission to. The     '
+' report shall also run on the 15th of every month and email the       '
+' teachers with their data for the month.                              '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class TeachingReport {
-  -teachee : User
-  -taught : bool
-  -notes : string
+    -teachee : User
+    -taught : bool
+    -notes : string
 }
 
 @enduml

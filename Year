@@ -2,13 +2,17 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.6.                                  12/1/2017 '
+' A placeholder for the calendar to keep track of years. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Year {
-  -months : KeyValue<MonthNames, Month>
-  -name : int
-  +getMonth(MonthNames) : Month
-  +addMonth(Month) : void
-  +updateMonth(Month) : void
-  +deleteMonth(Month) : void
+    -months : KeyValue<MonthNames, Month>
+    -name : int
+    +getMonth(MonthNames) : Month
+    +addMonth(Month) : void
+    +updateMonth(Month) : void
+    +deleteMonth(Month) : void
 }
 
 @enduml

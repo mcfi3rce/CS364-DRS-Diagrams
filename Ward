@@ -2,6 +2,11 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.9.                                   12/1/2017 '
+' To store the information of a user’s ward so they have  '
+' access to ward leadership and members as well as stake. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Ward {
     -members : List<Users>
     -stake : Stake

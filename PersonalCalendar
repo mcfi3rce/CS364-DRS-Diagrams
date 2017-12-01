@@ -1,0 +1,17 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 5.2.2.                                             12/1/2017 '
+' The Personal Calendar allows the user to see their events and     '
+' availabilities for themselves, assigned teachers, teachees and    '
+' units where applicable. While viewing their personal calendar,    '
+' the ward and stake calendars can be overlaid to allow them to see '
+' events in all calendars at the same time.                         '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class PersonalCalendar {
+    -user : User
+}
+
+@enduml

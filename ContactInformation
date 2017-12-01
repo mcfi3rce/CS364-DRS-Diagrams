@@ -2,11 +2,15 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.2.                                                    12/1/2017 '
+' Store the user’s name, phone number, email address and physical address. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class ContactInformation {
-  -name : string
-  -phoneNumbers : List<PhoneNumber>
-  -addresses : List<Address>
-  -emailAddress : string
+    -name : string
+    -phoneNumbers : List<PhoneNumber>
+    -addresses : List<Address>
+    -emailAddress : string
 }
 
 @enduml

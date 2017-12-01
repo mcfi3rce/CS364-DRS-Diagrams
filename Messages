@@ -2,6 +2,11 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.1.                                                       12/1/2017 '
+' To provide a way to allow users to send a SMS message to other users        '
+' without leaving the web app. SMS messages may be sent to one or many users. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Messages {
     -message: ChatMessage
 }

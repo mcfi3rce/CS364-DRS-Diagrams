@@ -1,5 +1,12 @@
 @startuml
+
 skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.6.2.                                  12/1/2017 '
+' To allow the users to add notes about their teachees   '
+' and give the note a certain degree of confidentiality. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Notes {
    -user : User
    -author : User
@@ -12,5 +19,7 @@ enum PrivacyLevel {
    Confidential
    Public
 }
+
 Notes *-right- PrivacyLevel : > has 1
+
 @enduml

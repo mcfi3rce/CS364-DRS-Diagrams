@@ -2,6 +2,10 @@
 
 skinparam classAttributeIconSize 0
 
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.6.                                          12/1/2017 '
+' To store a companionship's teachee.                            '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Assignment {
     -assignedCompanionship : Companionship
     -teachees : List<Teachee>

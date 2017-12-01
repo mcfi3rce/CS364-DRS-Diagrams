@@ -1,0 +1,140 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.1.                                              12/1/2017 '
+' To store the information of the user who physically interacts with '
+' the app by logging in. This includes username, password, role(s),  '
+' contact information, birth date, visit preference, personal        '
+' calendar, ward and their web app user preferences.                 '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class User {
+    -isAuthenticated : bool
+    -username : string
+    -password : string
+    -roles : List<Role>
+    -contactInformation : ContactInformation
+    -birthday : Date
+    -doNotVisit : bool
+    -personalCalendar : PersonalCalendar
+    -ward : Ward
+    -preferences : Preferences 
+    +isAuthenticated() : bool
+    +hasPermission(Permission) : bool
+    +hasTwoFactorAuthenticaton() : bool
+}
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.2.                                                    12/1/2017 '
+' Store the user’s name, phone number, email address and physical address. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ContactInformation {
+    -name : string
+    -phoneNumbers : List<PhoneNumber>
+    -addresses : List<Address>
+    -emailAddress : string
+}
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.3.                                              12/1/2017  '
+' Store the user’s phone number as part of their contact information. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class PhoneNumber {
+    -number : string
+    -type : PhoneType
+}
+
+enum PhoneType {
+    Home
+    Cell
+    Fax
+    Work
+}
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.4.                                          12/1/2017 '
+' Stores the user's address as part of their contact information '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Address {
+    -addressLine1 : string
+    -addressLine2 : string
+    -addressLine3 : string
+    -addressLine4 : string
+    -addressLine5 : string
+    -city : string
+    -stateOrProvince : string
+    -postalCode : string
+    -county : string
+    -country : string
+    -addressType : AddressType
+}
+
+enum AddressType {
+    Home
+    Work
+}
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.5.                                              12/1/2017 '
+' To set the permissions for each user based on their roles in their '
+' ward and stake in relation to visiting teaching or home teaching.  '
+' Roles and permissions will be provided through the LDS Tools API   '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Role {
+    -name : string
+    -permissions : Set<Permission>
+}
+
+enum Permission {
+    ViewMemberContactInformation
+    ResetPassword
+    CreateAssignment
+    UpdateAssignment
+    DeleteAssignment
+    CreateCompanionship
+    UpdateCompanionship
+    DeleteCompanionship
+    ...TBD
+}
+
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.10.                                     12/1/2017 '
+' To store the stake’s information so users have access to   '
+' what stake they are in and who the stake’s leadership are. '
+''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Stake {
+    -wards : List<Ward>
+    -name : string
+    -stakePresident : User
+    -stakeReliefSocietyPresident : User
+}
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.4.9.                                   12/1/2017 '
+' To store the information of a user’s ward so they have  '
+' access to ward leadership and members as well as stake. '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Ward {
+    -members : List<Users>
+    -stake : Stake
+    -name : string
+    -bishop : User
+    -eldersQuorumPresident : User
+    -reliefSocietyPresident : User
+    -highPriestGroupLeader : User
+}
+
+Ward o-right- User : > has 0..*
+Stake o-up- Ward : > has 1..*
+User *-right- Preferences : > has 1
+User o-- Role : > has 1..*
+Role *-- Permission : > has 1..*
+User *-- ContactInformation : > has 1..*
+ContactInformation *-- PhoneNumber : > has 1..*
+PhoneNumber *-- PhoneType : > has 1
+ContactInformation *-- Address : > has 1..*
+Address *-- AddressType  : > has 1
+
+@enduml
+

@@ -2,6 +2,12 @@
 
 skinparam classAttributeIconSize 0
 
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.2.1.                                             12/1/2017 '
+' To send the user a notification based upon the user’s preferences '
+' at a specified date and time. A reminder will display a           '
+' notification, send a text, or send an email.                      '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class Reminder {
     -isDismissed : bool
     -hasDisplayed : bool
@@ -22,11 +28,13 @@ class Reminder {
     +hasTriggerDateTimePassed() : bool
 }
 
-enum ReminderType{
+enum ReminderType {
     Email
     DesktopNotification
     MobileNotification
     Text
 }
+
 Reminder *-right- ReminderType : > has 1
+
 @enduml

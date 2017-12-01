@@ -1,0 +1,28 @@
+@startuml
+
+skinparam classAttributeIconSize 0
+
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.1.2.                                                 12/1/2017 '
+' Provides a simple way to see another user’s availability. For each    '
+' month viewed by the user, the user will be presented with a listview  '
+' of the times they can check time to indicate when they are available  '
+' during the month. This list will consist of days (8am - 5pm) or,      '
+' nights (5pm - 10pm) for each day of the month. Users will have access '
+' to their unit, teachers, companions, and teachees availability,       '
+' including the ability to download availabilities in order to prevent  '
+' scheduling conflicts. A notification will be sent to the user’s       '
+' teachers, companions, and teachees as applicable, when the user adds  '
+' or updates their availability.                                        '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class Availability {
+    -dayAvailability : bool
+    -nightAvailability : bool  
+    -dayRepeat : bool
+    -nightRepeat : bool  
+    +toggle(bool day, bool night, bool dayRepeat, bool nightRepeat) : void
+    +getDayAvailability() : bool
+    +getNightAvailability() : bool
+}
+
+@enduml

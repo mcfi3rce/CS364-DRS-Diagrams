@@ -2,7 +2,13 @@
 
 skinparam classAttributeIconSize 0
 
-class ChatArea{
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+' SDD: 4.5.2.                                               12/1/2017 '
+' To provide a designated space for users to communicate with each    '
+' other within the web app. Users may also be able to view, delete or '
+' archive their chat history for a desired conversation.              '
+'''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+class ChatArea {
     -recipients: List<User>
     -currentMessage: chatMessage
     -isSent: bool
