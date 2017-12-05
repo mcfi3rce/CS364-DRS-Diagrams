@@ -19,7 +19,6 @@ enum Permission {
     CreateCompanionship
     UpdateCompanionship
     DeleteCompanionship
-    ...TBD
 }
 
 @enduml
