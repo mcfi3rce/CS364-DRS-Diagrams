@@ -10,7 +10,6 @@ skinparam classAttributeIconSize 0
 ' calendar, ward and their web app user preferences.                 '
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
 class User {
-    -isAuthenticated : bool
     -username : string
     -password : string
     -roles : List<Role>
@@ -20,9 +19,6 @@ class User {
     -personalCalendar : PersonalCalendar
     -ward : Ward
     -preferences : Preferences 
-    +isAuthenticated() : bool
-    +hasPermission(Permission) : bool
-    +hasTwoFactorAuthenticaton() : bool
 }
 
 @enduml
