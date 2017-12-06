@@ -20,9 +20,6 @@ class User {
     -personalCalendar : PersonalCalendar
     -ward : Ward
     -preferences : Preferences 
-    +isAuthenticated() : bool
-    +hasPermission(Permission) : bool
-    +hasTwoFactorAuthenticaton() : bool
 }
 
 @enduml
